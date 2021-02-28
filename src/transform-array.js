@@ -4,7 +4,6 @@ module.exports = function transform(arr) {
   if (!Array.isArray(arr)) {
     throw new Error('Not array');
   }
-  let answ = [...arr]
   return [...arr].map ( (e,i,a) => {
     switch (e){
       case '--discard-next':
