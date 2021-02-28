@@ -6,6 +6,7 @@ class VigenereCipheringMachine {
     this.alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
   encrypt(string, key) {
+    if ( string == undefined || key == undefined) throw new Error();
     key = key.repeat(Math.ceil(string.length / key.length)).slice(0,string.length).toUpperCase();
     string = string.toUpperCase();
     let countOffset = 0;
@@ -24,6 +25,7 @@ class VigenereCipheringMachine {
     return this.reverse == true ? this.invert(string) : string;
   }    
   decrypt(string, key) {
+    if ( string == undefined || key == undefined) throw new Error();
     key = key.repeat(Math.ceil(string.length / key.length)).slice(0,string.length).toUpperCase();
     string = string.toUpperCase();
     let countOffset = 0;
